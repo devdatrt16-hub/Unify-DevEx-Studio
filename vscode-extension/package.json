@@ -1,0 +1,36 @@
+{
+  "name": "unify-devex-vscode",
+  "displayName": "Unify DevEx Studio - VS Code Extension",
+  "description": "Embedded Unify DevEx Studio webview extension with real-time active file context synchronization.",
+  "version": "1.0.0",
+  "publisher": "unify-devex",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:unify.openWalkthrough"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "unify.openWalkthrough",
+        "title": "Unify: Open Walkthrough for Active File",
+        "category": "Unify DevEx"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.75.0",
+    "typescript": "^5.0.0"
+  }
+}

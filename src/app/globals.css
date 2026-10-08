@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #050507;
+  --surface: #0e0e12;
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --foreground: #f4f4f7;
+  --foreground-muted: #9ca3af;
+  --silver-accent: #e4e4e7;
+  --silver-border: rgba(228, 228, 231, 0.15);
+}
+
+body, button, input, select, textarea {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'San Francisco', 'SF Pro', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.015em;
+  overflow-x: hidden;
+}
+
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+}
+
+/* Monochromatic Silver & Obsidian Ghost UI Panels */
+.ghost-panel {
+  background: #0e0e12;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.ghost-card {
+  background: #121217;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.silver-gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 50%, #9ca3af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.silver-border-glow {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.silver-border-glow:hover {
+  border-color: rgba(228, 228, 231, 0.4);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+/* Custom Minimalist Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Minimalist React Flow Custom Styling (Silver & Obsidian Black) */
+.react-flow__node {
+  border-radius: 0.5rem;
+  font-family: inherit;
+  box-shadow: none !important;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.react-flow__edge-path {
+  stroke-width: 1.5;
+  stroke: #52525b !important;
+}
+
+.react-flow__controls {
+  background: #0e0e12 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+.react-flow__controls-button {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: #a1a1aa !important;
+  fill: #a1a1aa !important;
+}
+
+.react-flow__controls-button:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #f4f4f7 !important;
+  fill: #f4f4f7 !important;
+}
+
+/* Hide React Flow Attribution Watermark */
+.react-flow__attribution {
+  display: none !important;
+}
