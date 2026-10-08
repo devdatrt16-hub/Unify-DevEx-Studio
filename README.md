@@ -2,7 +2,7 @@
 
 # ⚡ Unify DevEx Studio
 
-### **Interactive Dual-Pane Onboarding & Deterministic Architecture Mapping**
+### **Interactive Dual-Pane Code Base Onboarding & Deterministic Architecture Mapping**
 
 [![Next.js](https://img.shields.io/badge/Next.js-14.2-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
@@ -12,48 +12,50 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
-*Built for senior engineering teams, hackathons, and computer science students onboarding into complex codebases.*
+*Built for senior engineering teams, hackathon judges, and developers onboarding into legacy or complex codebases.*
 
 </div>
 
 ---
 
-## 📖 Project Overview
+## 📖 What is Unify DevEx Studio?
 
-Joining a new engineering team or analyzing a multi-thousand-line codebase for the first time is daunting. Traditional onboarding relies on **outdated, static documentation**, stale wiki pages, or endless manual code-tracing sessions that consume valuable senior engineering hours.
+Joining a new engineering team or analyzing a multi-thousand-line codebase for the first time is daunting. Traditional onboarding relies on **outdated documentation**, stale Confluence pages, or endless manual code-tracing sessions that consume senior engineering hours.
 
-**Unify DevEx Studio** solves this bottleneck by introducing a **dynamic, synchronized dual-pane educational workspace**. It connects high-level domain breakdowns directly to underlying source code files and ELK-layouted architectural graphs.
+**Unify DevEx Studio** solves this bottleneck with an **interactive, synchronized dual-pane workspace**. It connects high-level domain breakdowns directly to underlying source code files, line-by-line inspection drawers, and ELK-layouted architectural graphs.
 
-> 🔒 **100% Local & Deterministic**: Onboarding should not depend on probabilistic cloud LLM guesses or fabrications. Unify DevEx Studio uses a **deterministic Tree-sitter AST & NetworkX DAG engine** to extract real code structure with **zero hallucinations**.
+> 🔒 **100% Local & Deterministic**: Onboarding should not depend on probabilistic cloud LLM guesses. Unify DevEx Studio uses a **deterministic Tree-sitter AST & NetworkX DAG engine** to extract real code structure with **zero cloud hallucinations**.
 
 ---
 
-## 🎨 Dual-Pane Workspace & Key Features
+## ✨ Latest Features & Architecture Enhancements
 
-```
-┌───────────────────────────────────────┬───────────────────────────────────────┐
-│       MICRO VIEW (Left Pane)          │        MACRO VIEW (Right Pane)        │
-│   Lazy File Walkthrough & AST Facts   │  Segmented Nav (Overview, Graph...)   │
-├───────────────────────────────────────┼───────────────────────────────────────┤
-│ • Tier 0 Deterministic File Facts     │ • System Overview & README Reader     │
-│ • Tier 1 Streamed Ollama Explanations │ • ELK Hierarchical @xyflow/react Map  │
-│ • Key AST Function Signatures         │ • Business Rules & Logic Matrix       │
-│ • Junior Developer Tip Callouts       │ • Exact Git Folder Tree Reader        │
-└───────────────────────────────────────┴───────────────────────────────────────┘
-```
+### 1. 📁 Exact Git Folder Structure Explorer
+- **Interactive Directory Drill-Down**: Browse repository files through an authentic Git folder structure with dynamic breadcrumb navigation (`root / src / components / macro`).
+- **Parent Directory Navigation**: Seamlessly navigate back up with `..` (Parent directory) rows.
+- **Git Commit Metadata**: Displays author initials, commit message summaries, commit hashes (`b6d8c33f`), and relative timestamps (`18 hours ago`).
 
-### ⚡ Tiered Lazy Walkthrough Engine
-Instead of processing hundreds of steps for an entire codebase at once, Unify DevEx Studio evaluates files **lazily on demand**:
-- **Tier 0 (Instant Facts - 0ms LLM Latency)**: Tree-sitter extracts language, line count, entrypoint status, imported symbols, and AST function signatures deterministically.
-- **Tier 1 (Streamed Local LLM)**: Connects to local **Ollama (`qwen2.5-coder:7b`)** via Server-Sent Events (SSE). Results are verified against the AST symbol list and cached in **SQLite** keyed by `sha256(content + model + prompt_version)`.
+### 2. ⚡ Tiered Lazy Walkthrough Engine (Qwen 2.5 Local LLM)
+- **Tier 0 Instant Facts (0ms Latency)**: Tree-sitter AST parser extracts language, line count, entrypoint status, imported symbols, and function signature ranges deterministically.
+- **Tier 1 Streamed Architectural Explanations**: Local **Ollama (`qwen2.5-coder:7b`)** delivers Purpose, How It Works, Key AST Symbols, and Junior Developer Tips via SSE streaming.
+- **SQLite Disk Caching**: Explanations are cached in SQLite keyed by `sha256(file_content + model + prompt_version)` for instant replay.
 
-### 🌐 ELK Hierarchical Graph Layout (`@xyflow/react`)
-- Automatically arranges codebase dependency graphs using the **Eclipse Layout Kernel (ELK)** hierarchical algorithm to prevent node collisions and line overlaps.
-- Supports expandable parent folder group nodes, 60fps pan/zoom controls, category color accents, and 1-hop connected edge highlighting.
+### 3. 🌐 ELK Hierarchical Graph Layout (`@xyflow/react`)
+- Uses the **Eclipse Layout Kernel (ELK)** hierarchical algorithm for zero node collisions.
+- Features expandable folder group nodes, 60fps pan/zoom controls, PageRank importance scaling, and 1-hop connected edge highlighting.
 
-### 📁 Exact Git Folder Structure Explorer
-- Interactive folder tree navigation allowing developers to drill inside nested directories (`root / src / components / macro`) with breadcrumbs and parent directory (`..`) traversal.
-- Direct file selection bi-directionally syncs node focus and AST walkthrough breakdowns.
+### 4. ⏱️ Centered Git Time-Travel Timeline
+- Centered slider control (`Commit 1/5`) positioned cleanly at the bottom middle of the canvas (`bottom-3 left-1/2 -translate-x-1/2`) to scrub through commit history without overlapping viewport controls or node inspector drawers.
+
+### 5. 📖 Repository README.md Viewer in Overview Tab
+- Features a formatted line-by-line markdown documentation reader (`ReadmeMarkdownViewer`) in the Overview tab that dynamically loads and displays the analyzed Git repository's `README.md` file.
+
+### 6. 🎨 Premium Silver & Obsidian Theme with San Francisco Font
+- Styled with a monochromatic obsidian black palette (`#050507`, `#0e0e12`) and sleek silver accents.
+- Global **San Francisco** font family applied across all text, inputs, buttons, and badges.
+
+### 7. 🚀 Blazing Fast 1-Second Loading Transition
+- Analysis pipeline step delays optimized to 200ms per phase (1.0 second total transition time).
 
 ---
 
@@ -64,6 +66,7 @@ Instead of processing hundreds of steps for an entire codebase at once, Unify De
                     │        Next.js 14 Frontend UI           │
                     │   • Zustand 60fps Store State           │
                     │   • @xyflow/react + ELK Layout Engine   │
+                    │   • Exact Git Folder Tree Explorer      │
                     └────────────────────┬────────────────────┘
                                          │ REST / SSE API
                     ┌────────────────────▼────────────────────┐
@@ -80,7 +83,7 @@ Instead of processing hundreds of steps for an entire codebase at once, Unify De
 
 ---
 
-## 🚀 Quickstart Installation
+## 🚀 Quickstart Installation & Local Execution
 
 ### Prerequisites
 - **Node.js**: v18.x or higher
@@ -93,7 +96,7 @@ git clone https://github.com/devdatrt16-hub/Unify-DevEx-Studio.git
 cd Unify-DevEx-Studio
 ```
 
-### 2. Configure Local Ollama Instance
+### 2. Configure Local Ollama Model
 ```bash
 # Pull the required qwen2.5-coder model
 ollama pull qwen2.5-coder:7b
@@ -110,7 +113,7 @@ source venv/bin/activate   # On Windows: venv\Scripts\activate
 # Install requirements
 pip install -r requirements.txt
 
-# Start FastAPI microservice
+# Start FastAPI microservice on port 8000
 uvicorn main:app --reload --port 8000
 ```
 
@@ -131,6 +134,7 @@ Open **`http://localhost:3000`** in your browser to enter the workspace.
 | :--- | :--- | :--- |
 | **Accuracy Model** | Deterministic Tree-sitter AST & NetworkX DAG | Probabilistic LLM Prompting |
 | **Hallucination Risk** | **0% (Verified against AST schema)** | High (Fabricated methods/files) |
+| **File Navigation** | Exact Git Folder Structure with Breadcrumbs | Plain file dropdowns |
 | **Privacy & Security** | 100% Local (Ollama + Local AST) | Sends proprietary code to cloud |
 | **Graph Algorithm** | ELK Hierarchical Layouting | Manual positioning or basic force |
 | **Walkthrough Engine** | Tiered Lazy SSE Streamed + SQLite Cache | Full repo dump / context truncation |
